@@ -107,8 +107,10 @@
             this.Controls.Add(this.labelKills);
             this.Controls.Add(this.labelAmmo);
             this.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ZombieShooter";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MouseIsClick);
