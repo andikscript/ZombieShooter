@@ -175,7 +175,22 @@ namespace ZombieShooter
             if (e.KeyCode == Keys.R && gameOver == true)
             {
                 RestartGame();
-            } 
+            }
+
+            if (e.KeyCode == Keys.E)
+            {
+                gameTimer.Stop();
+                var YesOrNo = new DialogResult();
+                YesOrNo = MessageBox.Show("Apakah Anda Ingin Keluar??",
+                        "Memory Game is Win", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (YesOrNo == DialogResult.Yes)
+                {
+                    Environment.Exit(0);
+                } else
+                {
+                    gameTimer.Start();
+                }
+            }
         }
 
         private void KeyIsUp(object sender, KeyEventArgs e)
