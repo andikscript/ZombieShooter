@@ -7,7 +7,7 @@ Aplikasi Game Desktop dengan tema Shooter yang bermain dengan kejar - kejaran zo
 ## How to works?
 Press the keyboard button below to play it :
 
-Press | Behaviour |
+Key | Behaviour |
 --- | --- |
 | R | Start Game |
 | E | Exit Game |
