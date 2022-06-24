@@ -3,6 +3,7 @@ namespace ZombieShooter
     public partial class Form1 : Form
     {
         bool goRight, goLeft, goUp, goDown, gameOver;
+        bool fillAmmo = true;
         string facing = "up";
         int playerHealth = 100;
         int speed = 10;
@@ -64,6 +65,10 @@ namespace ZombieShooter
                         this.Controls.Remove(x);
                         ((PictureBox)x).Dispose();
                         ammo += 5;
+                        if (playerHealth != 100)
+                        {
+                            playerHealth += 2;
+                        }
                     }
                 }
 
@@ -119,6 +124,7 @@ namespace ZombieShooter
 
         private void KeyIsDown(object sender, KeyEventArgs e)
         {
+            // untuk control agar tidak ketika gameOver true tombol tidak bisa di ketik
             //if (gameOver == true)
             //{
             //    return;
@@ -152,24 +158,24 @@ namespace ZombieShooter
                 player.Image = Properties.Resources.up;
             }
 
-            if (e.KeyCode == Keys.R && gameOver == true)
+            if (e.KeyCode == Keys.Up)
             {
-                RestartGame();
-            } 
-        }
+                if (ammo > 0)
+                {
+                    ammo--;
+                    ShootBullet(facing);
+                }
 
-        private void MouseIsClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left && ammo > 0 && gameOver == false)
-            {
-                ammo--;
-                ShootBullet(facing);
-
-                if (ammo < 1)
+                if (ammo == 2)
                 {
                     MakeAmmo();
                 }
             }
+
+            if (e.KeyCode == Keys.R && gameOver == true)
+            {
+                RestartGame();
+            } 
         }
 
         private void KeyIsUp(object sender, KeyEventArgs e)

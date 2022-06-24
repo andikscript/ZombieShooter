@@ -113,7 +113,6 @@
             this.Text = "ZombieShooter";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MouseIsClick);
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
