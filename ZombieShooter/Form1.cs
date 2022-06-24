@@ -182,7 +182,7 @@ namespace ZombieShooter
                 gameTimer.Stop();
                 var YesOrNo = new DialogResult();
                 YesOrNo = MessageBox.Show("Apakah Anda Ingin Keluar??",
-                        "Memory Game is Win", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        "Zombie Shooter", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (YesOrNo == DialogResult.Yes)
                 {
                     Environment.Exit(0);
